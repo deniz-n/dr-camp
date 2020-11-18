@@ -43,9 +43,7 @@ RegisterCommand('kampkur', function(source, args, rawCommand)
 end, false)
 
 RegisterCommand('Kampkaldır', function(source, args, rawCommand)
-    if prevtent == 0 then
-       -- TriggerEvent('chatMessage', '', {255,255,255}, '^8Error: ^0no previous tent spawned, or your previous tent has already been deleted.')
-    else
+    if prevtent ~= 0 then
         TaskStartScenarioInPlace(PlayerPedId(), 'world_human_gardener_plant', 0, false)
         exports['mythic_progbar']:Progress({
 	    	name = "kamp_kaldır",
